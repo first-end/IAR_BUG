@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>4</fileVersion>
+    <fileChecksum>3973582135</fileChecksum>
+    <configuration>
+        <name>uart_poll</name>
+        <outputs>
+            <file>$PROJ_DIR$\startup_stm32f407xx.s</file>
+            <file>$PROJ_DIR$\..\coredump\coredump.c</file>
+            <file>$PROJ_DIR$\..\coredump\mystring.c</file>
+            <file>$PROJ_DIR$\..\coredump\testbug.c</file>
+            <file>$PROJ_DIR$\..\coredump\myuart.c</file>
+            <file>$PROJ_DIR$\..\rtthread\src\clock.c</file>
+            <file>$PROJ_DIR$\..\rtthread\src\idle.c</file>
+            <file>$PROJ_DIR$\..\rtthread\src\ipc.c</file>
+            <file>$PROJ_DIR$\..\rtthread\libcpu\arm\cortex-m4\context_iar.S</file>
+            <file>$PROJ_DIR$\..\rtthread\src\components.c</file>
+            <file>$PROJ_DIR$\..\rtthread\src\irq.c</file>
+            <file>$PROJ_DIR$\..\rtthread\src\kservice.c</file>
+            <file>$PROJ_DIR$\..\rtthread\libcpu\arm\cortex-m4\cpuport.c</file>
+            <file>$PROJ_DIR$\..\rtthread\board.c</file>
+            <file>$PROJ_DIR$\..\rtthread\src\cpu.c</file>
+            <file>$PROJ_DIR$\..\rtthread\src\mempool.c</file>
+            <file>$PROJ_DIR$\..\rtthread\src\scheduler.c</file>
+            <file>$PROJ_DIR$\..\rtthread\src\memheap.c</file>
+            <file>$PROJ_DIR$\..\rtthread\rtconfig.h</file>
+            <file>$PROJ_DIR$\..\rtthread\src\timer.c</file>
+            <file>$PROJ_DIR$\..\rtthread\src\object.c</file>
+            <file>$PROJ_DIR$\..\rtthread\src\thread.c</file>
+            <file>$PROJ_DIR$\..\rtthread\src\slab.c</file>
+            <file>$PROJ_DIR$\..\rtthread\src\mem.c</file>
+            <file>$PROJ_DIR$\..\coredump\coredump_cmd.S</file>
+        </outputs>
+    </configuration>
+</project>

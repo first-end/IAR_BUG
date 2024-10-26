@@ -1,0 +1,93 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 THUMB
+    2 00000000                 AREA             |.text|, CODE, READONLY
+    3 00000000         
+    4 00000000         ; Reset handler
+    5 00000000         led_blink
+                               PROC
+    6 00000000                 EXPORT           led_blink
+    7 00000000 FF FF           DCW              0xffff
+    8 00000002 4A09            LDR              R2, =(0x40021414)
+    9 00000004         Loop
+   10 00000004         ; set GPF9 output hight
+   11 00000004 6811            LDR              R1, [R2]
+   12 00000006 F441 7100       ORR              R1, R1, #(1<<9)
+   13 0000000A 6011            STR              R1, [R2]
+   14 0000000C         
+   15 0000000C 4807            LDR              R0, =100000000
+   16 0000000E F7FF FFFE       BL               mydelay
+   17 00000012         
+   18 00000012         ; set GPF9 output low
+   19 00000012 6811            LDR              R1, [R2]
+   20 00000014 F421 7100       BIC              R1, R1, #(1<<9)
+   21 00000018 6011            STR              R1, [R2]
+   22 0000001A         
+   23 0000001A 4804            LDR              R0, =100000000
+   24 0000001C F7FF FFFE       BL               mydelay
+   25 00000020         
+   26 00000020 E7F0            B                Loop
+   27 00000022                 ENDP
+   28 00000022         
+   29 00000022         mydelay PROC
+   30 00000022 1E40            SUBS             R0, R0, #1
+   31 00000024 D1FE            BNE              mydelay
+   32 00000026 4770            BX               LR
+   33 00000028                 ENDP
+   34 00000028         
+   35 00000028                 END
+              40021414 
+              05F5E100 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
+interwork --depend=uart_poll\led.d -ouart_poll\led.o -I.\RTE\_uart_poll -ID:\so
+ftware\Keil_v5\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include -ID:\software\Keil_
+v5\ARM\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Includ
+e --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 538" --pr
+edefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --predefine="_RTE_ SETA
+ 1" --list=led.lst ..\Core\Src\led.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 2 in file ..\Core\Src\led.s
+   Uses
+      None
+Comment: .text unused
+Loop 00000004
+
+Symbol: Loop
+   Definitions
+      At line 9 in file ..\Core\Src\led.s
+   Uses
+      At line 26 in file ..\Core\Src\led.s
+Comment: Loop used once
+led_blink 00000000
+
+Symbol: led_blink
+   Definitions
+      At line 5 in file ..\Core\Src\led.s
+   Uses
+      At line 6 in file ..\Core\Src\led.s
+Comment: led_blink used once
+mydelay 00000022
+
+Symbol: mydelay
+   Definitions
+      At line 29 in file ..\Core\Src\led.s
+   Uses
+      At line 16 in file ..\Core\Src\led.s
+      At line 24 in file ..\Core\Src\led.s
+      At line 31 in file ..\Core\Src\led.s
+
+4 symbols
+341 symbols in table
